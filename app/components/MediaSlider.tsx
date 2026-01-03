@@ -99,6 +99,7 @@ export default function MediaSlider({
             controls
             playsInline
             loop
+            muted
             controlsList="nodownload"
           />
         </div>
@@ -143,6 +144,7 @@ export default function MediaSlider({
                 controls
                 playsInline
                 loop
+                muted
                 controlsList="nodownload"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
