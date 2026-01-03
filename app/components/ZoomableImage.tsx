@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, TouchEvent } from "react";
+import { useState, useRef, useEffect, useCallback, TouchEvent } from "react";
 import Image from "next/image";
 import { ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
@@ -171,19 +171,18 @@ export default function ZoomableImage({
   };
 
   // Reset on escape key
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape" && isZoomed) {
+      setScale(1);
+      setPosition({ x: 0, y: 0 });
+      setIsZoomed(false);
+    }
+  }, [isZoomed]);
+
   useEffect(() => {
-    if (!isZoomed) return;
-    
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setScale(1);
-        setPosition({ x: 0, y: 0 });
-        setIsZoomed(false);
-      }
-    };
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
-  }, [isZoomed]);
+  }, [handleEscape]);
 
   return (
     <div
