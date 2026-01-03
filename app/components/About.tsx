@@ -42,11 +42,6 @@ export default function About() {
         whatsapp: "https://wa.me/966550182835",
         wechatId: "ullahmisbah15",
       },
-      {
-        name: "Sam Xie",
-        whatsapp: "https://wa.me/966550182835",
-        wechatId: "ullahmisbah15",
-      },
     ],
   };
 
