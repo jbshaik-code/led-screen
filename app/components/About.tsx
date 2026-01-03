@@ -38,7 +38,7 @@ export default function About() {
     wechatId: "ullahmisbah15",
     employees: [
       {
-        name: "Mohammed Misbah ullah",
+        name: "Sam Xie",
         whatsapp: "https://wa.me/966550182835",
         wechatId: "ullahmisbah15",
       },
