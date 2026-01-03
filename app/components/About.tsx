@@ -2,36 +2,34 @@
 
 import { Award, Users, Clock, Target, MessageCircle, Phone } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
-const features = [
+const getFeatures = (t: (key: string) => string) => [
   {
     icon: Award,
-    title: "Certified Training",
-    description:
-      "Industry-recognized certification upon completion of the training program",
+    title: t("about.certified"),
+    description: t("about.certifiedDesc"),
   },
   {
     icon: Users,
-    title: "Expert Instructors",
-    description:
-      "Learn from experienced professionals with years of industry expertise",
+    title: t("about.expert"),
+    description: t("about.expertDesc"),
   },
   {
     icon: Clock,
-    title: "Flexible Schedule",
-    description:
-      "Self-paced learning with lifetime access to training materials",
+    title: t("about.flexible"),
+    description: t("about.flexibleDesc"),
   },
   {
     icon: Target,
-    title: "Practical Focus",
-    description:
-      "Hands-on training with real-world applications and case studies",
+    title: t("about.practical"),
+    description: t("about.practicalDesc"),
   },
 ];
 
 export default function About() {
   const [showContactModal, setShowContactModal] = useState(false);
+  const { t } = useLanguage();
 
   const contactInfo = {
     whatsapp: "https://wa.me/966550182835",
@@ -64,17 +62,15 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
-            About the Training
+            {t("about.title")}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Our comprehensive LED display screen technical training program is designed to
-            provide you with in-depth knowledge and practical skills in LED display screen
-            technology, applications, installation, and maintenance.
+            {t("about.description")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
-          {features.map((feature, index) => {
+          {getFeatures(t).map((feature, index) => {
             const IconComponent = feature.icon;
             return (
               <div
@@ -99,24 +95,18 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                Course Overview
+                {t("about.courseOverview")}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-                This bilingual technical training program covers all essential
-                aspects of LED display screen technology, from fundamental concepts to advanced
-                applications. The course is structured to accommodate both
-                beginners and experienced professionals working with video walls and digital displays.
+                {t("about.courseText")}
               </p>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                You'll learn about LED display principles, screen installation techniques,
-                maintenance procedures, control systems, safety standards, and much more. The
-                training includes practical examples, case studies, and
-                real-world scenarios to enhance your understanding of LED display technology.
+                {t("about.courseText2")}
               </p>
             </div>
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                Who Should Attend
+                {t("about.whoShouldAttend")}
               </h3>
               <ul className="space-y-2 sm:space-y-3">
                 {[
@@ -156,7 +146,7 @@ export default function About() {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
-                      Contact Our Team
+                      {t("footer.contact")}
                     </h4>
                     
                     <div className="space-y-4 sm:space-y-6">
