@@ -37,6 +37,8 @@ export default function MediaSlider({
     // Auto-play video when it becomes active
     const currentVideo = videoRefs.current[currentIndex];
     if (currentVideo && isVideo(media[currentIndex])) {
+      // Ensure video is muted before playing
+      currentVideo.muted = true;
       currentVideo.play().catch(() => {
         // Auto-play failed, user interaction required
       });
@@ -45,11 +47,12 @@ export default function MediaSlider({
       setIsPlaying(false);
     }
 
-    // Pause other videos
+    // Pause other videos and ensure they're muted
     videoRefs.current.forEach((video, index) => {
       if (video && index !== currentIndex) {
         video.pause();
         video.currentTime = 0;
+        video.muted = true;
       }
     });
   }, [currentIndex, media]);
