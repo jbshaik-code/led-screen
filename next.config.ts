@@ -1,12 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Specify the root directory to avoid multiple lockfile warnings
-  experimental: {
-    turbo: {
-      root: process.cwd(),
-    },
-  },
   images: {
     remotePatterns: [
       {

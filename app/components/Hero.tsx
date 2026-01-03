@@ -22,6 +22,7 @@ export default function Hero() {
                   alt="SBC Logo"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
                   priority
                 />
               </div>
@@ -32,6 +33,7 @@ export default function Hero() {
                   alt="WEJHA Logo"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
                   priority
                 />
               </div>
