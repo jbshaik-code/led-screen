@@ -94,7 +94,7 @@ export default function MediaSlider({
       return (
         <div className="relative w-full h-full">
           <video
-            ref={(el) => (videoRefs.current[0] = el)}
+            ref={(el) => { videoRefs.current[0] = el; }}
             src={singleMedia}
             className="w-full h-full object-cover"
             controls
@@ -137,7 +137,7 @@ export default function MediaSlider({
         >
           {isVideo(media[currentIndex]) ? (
             <video
-              ref={(el) => (videoRefs.current[currentIndex] = el)}
+              ref={(el) => { videoRefs.current[currentIndex] = el; }}
               src={media[currentIndex]}
               className="w-full h-full object-cover"
               controls
