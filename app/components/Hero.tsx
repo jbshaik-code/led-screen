@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowDown, Monitor, Zap, BookOpen } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -16,11 +17,30 @@ export default function Hero() {
               <Monitor className="h-8 w-8 sm:h-12 sm:w-12 text-blue-600" />
             </div>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
-            LED Display Screen
-            <br />
-            <span className="text-blue-600">Technical Training</span>
-          </h1>
+          <div className="relative inline-block">
+            {/* Logo behind text */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-15 sm:opacity-20 md:opacity-25">
+              <div className="relative w-64 sm:w-80 md:w-96 lg:w-[500px] h-32 sm:h-40 md:h-48 lg:h-56">
+                {/* Try to load as image - if EPS, use img tag instead */}
+                <img
+                  src="/logo wejha 2 .eps"
+                  alt="WEJUHA and SBC Logos"
+                  className="w-full h-full object-contain"
+                  style={{ filter: 'grayscale(100%) opacity(0.3)' }}
+                  onError={(e) => {
+                    // Hide if image doesn't load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = "none";
+                  }}
+                />
+              </div>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 relative z-10 drop-shadow-sm">
+              LED Display Screen
+              <br />
+              <span className="text-blue-600 drop-shadow-sm">Technical Training</span>
+            </h1>
+          </div>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
             Master LED display screen technology through comprehensive bilingual training
             <br className="hidden sm:block" />
