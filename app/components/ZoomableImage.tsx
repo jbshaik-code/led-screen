@@ -176,7 +176,9 @@ export default function ZoomableImage({
     
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        resetZoom();
+        setScale(1);
+        setPosition({ x: 0, y: 0 });
+        setIsZoomed(false);
       }
     };
     window.addEventListener("keydown", handleEscape);
