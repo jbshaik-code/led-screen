@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectFade, Keyboard, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, EffectFade, Keyboard } from "swiper/modules";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X, CheckCircle, ArrowRight, ImageIcon } from "lucide-react";
 import Image from "next/image";
@@ -59,7 +59,7 @@ export default function PresentationView({
       <div className="h-full w-full flex items-center justify-center p-2 sm:p-4">
         <div className="w-full max-w-6xl h-full max-h-[95vh] sm:max-h-[90vh]">
           <Swiper
-            modules={[Navigation, Pagination, EffectFade, Keyboard, Autoplay]}
+            modules={[Navigation, Pagination, EffectFade, Keyboard]}
             effect="fade"
             fadeEffect={{ crossFade: true }}
             spaceBetween={0}
@@ -76,7 +76,6 @@ export default function PresentationView({
               },
             }}
             keyboard={{ enabled: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             touchEventsTarget="container"
             allowTouchMove={true}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
