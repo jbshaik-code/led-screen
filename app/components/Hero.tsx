@@ -12,37 +12,35 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
         <div className="text-center">
-          <div className="flex justify-center mb-4 sm:mb-6">
-            <div className="p-3 sm:p-4 bg-blue-100 rounded-full">
-              <Monitor className="h-8 w-8 sm:h-12 sm:w-12 text-blue-600" />
-            </div>
-          </div>
-          <div className="relative inline-block">
-            {/* Company logos behind text */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-10 sm:opacity-15 md:opacity-20 gap-4 sm:gap-6 md:gap-8">
+          <div className="flex justify-center mb-4 sm:mb-6 relative">
+            {/* Company logos behind icon */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-20 sm:opacity-30 md:opacity-40 gap-3 sm:gap-4 md:gap-6">
               {/* SBC Logo - First */}
-              <div className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-16 sm:h-20 md:h-24 lg:h-28">
+              <div className="relative w-20 sm:w-24 md:w-32 lg:w-40 h-10 sm:h-12 md:h-16 lg:h-20">
                 <Image
                   src="/SBC.png"
                   alt="SBC Logo"
                   fill
                   className="object-contain"
-                  style={{ filter: 'grayscale(100%) opacity(0.4)' }}
                   priority
                 />
               </div>
               {/* WEJHA Logo - Second */}
-              <div className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-16 sm:h-20 md:h-24 lg:h-28">
+              <div className="relative w-20 sm:w-24 md:w-32 lg:w-40 h-10 sm:h-12 md:h-16 lg:h-20">
                 <Image
                   src="/Wejha_Logo_-_CMs_3-.png"
                   alt="WEJHA Logo"
                   fill
                   className="object-contain"
-                  style={{ filter: 'grayscale(100%) opacity(0.4)' }}
                   priority
                 />
               </div>
             </div>
+            <div className="p-3 sm:p-4 bg-blue-100 rounded-full relative z-10">
+              <Monitor className="h-8 w-8 sm:h-12 sm:w-12 text-blue-600" />
+            </div>
+          </div>
+          <div className="relative inline-block">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 relative z-10 drop-shadow-sm">
               LED Display Screen
               <br />
