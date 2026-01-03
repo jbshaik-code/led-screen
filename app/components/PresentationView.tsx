@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X, CheckCircle, ArrowRight, ImageIcon } from "lucide-react";
 import Image from "next/image";
 import ImageSlider from "./ImageSlider";
+import ZoomableImage from "./ZoomableImage";
 
 interface Slide {
   type: "title" | "content" | "image" | "list" | "led-type";
@@ -190,7 +191,7 @@ export default function PresentationView({
                             autoPlay={true}
                           />
                         ) : (
-                          <Image
+                          <ZoomableImage
                             src={Array.isArray(slide.imageUrl) ? slide.imageUrl[0] : slide.imageUrl}
                             alt={slide.title || "LED Display"}
                             fill
@@ -257,7 +258,7 @@ export default function PresentationView({
 
                         {slide.ledType.imageUrl && (
                           <div className="relative h-48 sm:h-64 md:h-96 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 mb-4 sm:mb-6">
-                            <Image
+                            <ZoomableImage
                               src={Array.isArray(slide.ledType.imageUrl) ? slide.ledType.imageUrl[0] : slide.ledType.imageUrl}
                               alt={slide.ledType.name}
                               fill

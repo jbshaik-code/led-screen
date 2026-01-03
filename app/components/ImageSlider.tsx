@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import ZoomableImage from "./ZoomableImage";
 
 interface ImageSliderProps {
   images: string[];
@@ -49,7 +50,7 @@ export default function ImageSlider({
   if (images.length === 1) {
     return (
       <div className="relative w-full h-full">
-        <Image
+        <ZoomableImage
           src={images[0]}
           alt={alt}
           fill
@@ -76,7 +77,7 @@ export default function ImageSlider({
           transition={{ duration: 0.5 }}
           className="relative w-full h-full"
         >
-          <Image
+          <ZoomableImage
             src={images[currentIndex]}
             alt={`${alt} - Image ${currentIndex + 1}`}
             fill
