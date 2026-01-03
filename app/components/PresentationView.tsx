@@ -204,7 +204,7 @@ export default function PresentationView({
                                 controls
                                 playsInline
                                 loop
-                                muted
+                                controlsList="nodownload"
                               />
                             );
                           } else {

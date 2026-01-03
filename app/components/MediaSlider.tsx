@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
-import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import ZoomableImage from "./ZoomableImage";
 
 interface MediaSliderProps {
@@ -92,15 +91,15 @@ export default function MediaSlider({
     const singleMedia = media[0];
     if (isVideo(singleMedia)) {
       return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full flex items-center justify-center bg-black">
           <video
             ref={(el) => { videoRefs.current[0] = el; }}
             src={singleMedia}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             controls
             playsInline
             loop
-            muted
+            controlsList="nodownload"
           />
         </div>
       );
@@ -136,15 +135,19 @@ export default function MediaSlider({
           className="relative w-full h-full"
         >
           {isVideo(media[currentIndex]) ? (
-            <video
-              ref={(el) => { videoRefs.current[currentIndex] = el; }}
-              src={media[currentIndex]}
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              loop
-              muted
-            />
+            <div className="relative w-full h-full flex items-center justify-center bg-black">
+              <video
+                ref={(el) => { videoRefs.current[currentIndex] = el; }}
+                src={media[currentIndex]}
+                className="w-full h-full object-contain"
+                controls
+                playsInline
+                loop
+                controlsList="nodownload"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              />
+            </div>
           ) : (
             <ZoomableImage
               src={media[currentIndex]}
@@ -173,21 +176,6 @@ export default function MediaSlider({
       >
         <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
       </button>
-
-      {/* Play/Pause for videos */}
-      {isVideo(media[currentIndex]) && (
-        <button
-          onClick={togglePlayPause}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/70 active:bg-black/80 rounded-full text-white transition-all z-10 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
-          aria-label={isPlaying ? "Pause" : "Play"}
-        >
-          {isPlaying ? (
-            <Pause className="h-5 w-5 sm:h-6 sm:w-6" />
-          ) : (
-            <Play className="h-5 w-5 sm:h-6 sm:w-6" />
-          )}
-        </button>
-      )}
 
       {/* Dots Indicator */}
       {media.length > 1 && (
