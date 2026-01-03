@@ -24,7 +24,7 @@ export default function Hero() {
                 {/* Try to load as image - if EPS, use img tag instead */}
                 <img
                   src="/logo wejha 2 .eps"
-                  alt="WEJUHA and SBC Logos"
+                  alt=""
                   className="w-full h-full object-contain"
                   style={{ filter: 'grayscale(100%) opacity(0.3)' }}
                   onError={(e) => {
