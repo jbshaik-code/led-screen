@@ -1,6 +1,7 @@
 "use client";
 
-import { Award, Users, Clock, Target } from "lucide-react";
+import { Award, Users, Clock, Target, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
 
 const features = [
   {
@@ -30,6 +31,36 @@ const features = [
 ];
 
 export default function About() {
+  const [showContactModal, setShowContactModal] = useState(false);
+
+  const contactInfo = {
+    whatsapp: "https://wa.me/966550182835",
+    wechatId: "ullahmisbah15",
+    employees: [
+      {
+        name: "Mohammed Misbah ullah",
+        whatsapp: "https://wa.me/966550182835",
+        wechatId: "ullahmisbah15",
+      },
+      {
+        name: "Sam Xie",
+        whatsapp: "https://wa.me/966550182835",
+        wechatId: "ullahmisbah15",
+      },
+    ],
+  };
+
+  const clickableItems = [
+    "AV/Display Engineers",
+    "LED Screen Installers",
+    "Video Wall Technicians",
+    "Display Maintenance Professionals",
+  ];
+
+  const handleItemClick = () => {
+    setShowContactModal(true);
+  };
+
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,13 +128,84 @@ export default function About() {
                   "Display Maintenance Professionals",
                   "Project Managers",
                   "Students & Enthusiasts",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center text-sm sm:text-base text-gray-600">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+                ].map((item, index) => {
+                  const isClickable = clickableItems.includes(item);
+                  return (
+                    <li
+                      key={index}
+                      className={`flex items-center text-sm sm:text-base ${
+                        isClickable
+                          ? "text-blue-600 hover:text-blue-700 cursor-pointer transition-colors"
+                          : "text-gray-600"
+                      }`}
+                      onClick={isClickable ? handleItemClick : undefined}
+                    >
+                      <span className="w-2 h-2 bg-blue-600 rounded-full mr-2 sm:mr-3 flex-shrink-0"></span>
+                      <span className={isClickable ? "underline" : ""}>{item}</span>
+                    </li>
+                  );
+                })}
               </ul>
+              
+              {/* Contact Modal */}
+              {showContactModal && (
+                <div
+                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                  onClick={() => setShowContactModal(false)}
+                >
+                  <div
+                    className="bg-white rounded-lg sm:rounded-xl p-6 sm:p-8 max-w-md w-full shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
+                      Contact Our Team
+                    </h4>
+                    
+                    <div className="space-y-4 sm:space-y-6">
+                      {contactInfo.employees.map((employee, index) => (
+                        <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
+                          <h5 className="font-semibold text-gray-900 mb-3 text-base sm:text-lg">
+                            {employee.name}
+                          </h5>
+                          <div className="space-y-2">
+                            <a
+                              href={employee.whatsapp}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
+                            >
+                              <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                              <span className="text-sm sm:text-base">WhatsApp: {employee.whatsapp.replace("https://wa.me/", "")}</span>
+                            </a>
+                            <div className="flex items-center space-x-2 text-gray-700">
+                              <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
+                              <span className="text-sm sm:text-base">WeChat ID: {employee.wechatId}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={contactInfo.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-4 py-2 sm:py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors text-center flex items-center justify-center space-x-2"
+                      >
+                        <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                        <span>Open WhatsApp</span>
+                      </a>
+                      <button
+                        onClick={() => setShowContactModal(false)}
+                        className="px-4 py-2 sm:py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
