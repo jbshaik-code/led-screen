@@ -12,6 +12,6 @@ export default function Home() {
       <TrainingModules />
       <About />
       <Footer />
-    </main>
+      </main>
   );
 }

@@ -69,13 +69,13 @@ export default function ModuleDetail({
       "/custamize led-4.jpeg",
       "/custamize led-5.jpeg",
       "/custamize led-6.jpeg",
-      "/LED Display Structure & Components.mp4",
-      "/LED Display Structure & Components-1.mp4",
-      "/LED Display Structure & Components-2.mp4",
-      "/LED Display Structure & Components-3.mp4",
-      "/LED Display Structure & Components-4.mp4",
-      "/LED Display Structure & Components-5.jpeg",
-      "/LED Display Structure & Components-6.jpeg",
+      "/LED Display Structure and Components.mp4",
+      "/LED Display Structure and Components-1.mp4",
+      "/LED Display Structure and Components-2.mp4",
+      "/LED Display Structure and Components-3.mp4",
+      "/LED Display Structure and Components-4.mp4",
+      "/LED Display Structure and Components-5.jpeg",
+      "/LED Display Structure and Components-6.jpeg",
     ];
 
     // Find all media files that match the base name pattern
@@ -187,7 +187,7 @@ export default function ModuleDetail({
         },
         {
           title: "LED Display Structure & Components",
-          imageUrl: "/LED Display Structure & Components.mp4",
+          imageUrl: "/LED Display Structure and Components.mp4",
           description: "LED displays consist of multiple layers and components working together to create high-quality visual output. Understanding the structure is essential for installation, maintenance, and troubleshooting.",
           details: {
             type: "components",
