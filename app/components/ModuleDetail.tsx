@@ -7,6 +7,7 @@ import Image from "next/image";
 import PresentationView from "./PresentationView";
 import ImageSlider from "./ImageSlider";
 import ZoomableImage from "./ZoomableImage";
+import MediaSlider from "./MediaSlider";
 
 interface ModuleDetailProps {
   module: {
@@ -43,16 +44,15 @@ export default function ModuleDetail({
   const IconComponent = module.icon;
   const [presentationMode, setPresentationMode] = useState(false);
 
-  // Function to find all matching images based on base filename
+  // Function to find all matching images and videos based on base filename
   const findMatchingImages = (baseImageUrl: string): string[] => {
     if (!baseImageUrl) return [];
     
     // Extract base name without extension
-    const baseName = baseImageUrl.replace(/\.(jpeg|jpg|png|gif|webp)$/i, '');
-    const extension = baseImageUrl.match(/\.(jpeg|jpg|png|gif|webp)$/i)?.[0] || '.jpeg';
+    const baseName = baseImageUrl.replace(/\.(jpeg|jpg|png|gif|webp|mp4)$/i, '');
     
-    // Known images in public folder - in a real app, this would be dynamic
-    const allImages = [
+    // Known media files in public folder - in a real app, this would be dynamic
+    const allMedia = [
       "/Digital billboards and signage.jpeg",
       "/Digital billboards and signage-1.jpeg",
       "/Digital billboards and signage-2.jpeg",
@@ -69,17 +69,24 @@ export default function ModuleDetail({
       "/custamize led-4.jpeg",
       "/custamize led-5.jpeg",
       "/custamize led-6.jpeg",
+      "/LED Display Structure & Components.mp4",
+      "/LED Display Structure & Components-1.mp4",
+      "/LED Display Structure & Components-2.mp4",
+      "/LED Display Structure & Components-3.mp4",
+      "/LED Display Structure & Components-4.mp4",
+      "/LED Display Structure & Components-5.jpeg",
+      "/LED Display Structure & Components-6.jpeg",
     ];
 
-    // Find all images that match the base name pattern
-    const matchingImages = allImages.filter(img => {
-      const imgBaseName = img.replace(/\.(jpeg|jpg|png|gif|webp)$/i, '');
+    // Find all media files that match the base name pattern
+    const matchingMedia = allMedia.filter(media => {
+      const mediaBaseName = media.replace(/\.(jpeg|jpg|png|gif|webp|mp4)$/i, '');
       // Match exact base name or base name with -1, -2, etc.
-      return imgBaseName === baseName || imgBaseName.startsWith(baseName + '-');
+      return mediaBaseName === baseName || mediaBaseName.startsWith(baseName + '-');
     });
 
     // Sort to ensure order: base, -1, -2, etc.
-    return matchingImages.sort((a, b) => {
+    return matchingMedia.sort((a, b) => {
       const aNum = a.match(/-(\d+)/)?.[1] || '0';
       const bNum = b.match(/-(\d+)/)?.[1] || '0';
       if (aNum === '0' && bNum !== '0') return -1;
@@ -180,6 +187,7 @@ export default function ModuleDetail({
         },
         {
           title: "LED Display Structure & Components",
+          imageUrl: "/LED Display Structure & Components.mp4",
           description: "LED displays consist of multiple layers and components working together to create high-quality visual output. Understanding the structure is essential for installation, maintenance, and troubleshooting.",
           details: {
             type: "components",
@@ -473,16 +481,16 @@ export default function ModuleDetail({
         // Add individual slides for each application
         content.applications.forEach((app: any) => {
           if (typeof app === 'object' && app !== null) {
-            // If application has image
+            // If application has image/video
             if (app.imageUrl) {
-              // Find all matching images
-              const matchingImages = findMatchingImages(app.imageUrl);
-              const imagesToUse = matchingImages.length > 1 ? matchingImages : [app.imageUrl];
+              // Find all matching media (images and videos)
+              const matchingMedia = findMatchingImages(app.imageUrl);
+              const mediaToUse = matchingMedia.length > 1 ? matchingMedia : [app.imageUrl];
               
               slides.push({
                 type: "image",
                 title: app.title,
-                imageUrl: imagesToUse.length > 1 ? imagesToUse : imagesToUse[0],
+                imageUrl: mediaToUse.length > 1 ? mediaToUse : mediaToUse[0],
                 imageCaption: app.description || app.title,
                 content: app.description,
               });
@@ -867,9 +875,10 @@ export default function ModuleDetail({
                         const imageUrl = isObject ? app.imageUrl : null;
                         const description = isObject ? app.description : null;
 
-                        // Find all matching images for this application
-                        const matchingImages = imageUrl ? findMatchingImages(imageUrl) : [];
-                        const hasMultipleImages = matchingImages.length > 1;
+                        // Find all matching media (images and videos) for this application
+                        const matchingMedia = imageUrl ? findMatchingImages(imageUrl) : [];
+                        const hasMultipleMedia = matchingMedia.length > 1;
+                        const hasVideo = matchingMedia.some(m => m.toLowerCase().endsWith('.mp4'));
 
                         return (
                           <motion.div
@@ -881,15 +890,26 @@ export default function ModuleDetail({
                           >
                             {imageUrl && (
                               <div className="relative w-full h-40 sm:h-48">
-                                {hasMultipleImages ? (
-                                  <ImageSlider
-                                    images={matchingImages}
+                                {hasMultipleMedia ? (
+                                  <MediaSlider
+                                    media={matchingMedia}
                                     alt={title}
                                     interval={5000}
                                     autoPlay={true}
                                   />
+                                ) : hasVideo ? (
+                                  <div className="relative w-full h-full">
+                                    <video
+                                      src={imageUrl}
+                                      className="w-full h-full object-cover"
+                                      controls
+                                      playsInline
+                                      loop
+                                      muted
+                                    />
+                                  </div>
                                 ) : (
-                                  <Image
+                                  <ZoomableImage
                                     src={imageUrl}
                                     alt={title}
                                     fill

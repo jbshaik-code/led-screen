@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, X, CheckCircle, ArrowRight, ImageIcon } from
 import Image from "next/image";
 import ImageSlider from "./ImageSlider";
 import ZoomableImage from "./ZoomableImage";
+import MediaSlider from "./MediaSlider";
 
 interface Slide {
   type: "title" | "content" | "image" | "list" | "led-type";
@@ -182,23 +183,43 @@ export default function PresentationView({
                         transition={{ duration: 0.6 }}
                         className="flex-1 relative rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 mb-4 sm:mb-6 min-h-[250px] sm:min-h-[300px] md:min-h-[400px]"
                       >
-                        {Array.isArray(slide.imageUrl) && slide.imageUrl.length > 1 ? (
-                          <ImageSlider
-                            images={slide.imageUrl}
-                            alt={slide.title || "LED Display"}
-                            interval={5000}
-                            autoPlay={true}
-                          />
-                        ) : (
-                          <ZoomableImage
-                            src={Array.isArray(slide.imageUrl) ? slide.imageUrl[0] : slide.imageUrl}
-                            alt={slide.title || "LED Display"}
-                            fill
-                            className="object-contain sm:object-cover"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
-                            quality={85}
-                          />
-                        )}
+                        {(() => {
+                          const mediaUrl = Array.isArray(slide.imageUrl) ? slide.imageUrl[0] : slide.imageUrl;
+                          const isVideo = typeof mediaUrl === 'string' && (mediaUrl.toLowerCase().endsWith('.mp4') || mediaUrl.toLowerCase().endsWith('.webm'));
+                          
+                          if (Array.isArray(slide.imageUrl) && slide.imageUrl.length > 1) {
+                            return (
+                              <MediaSlider
+                                media={slide.imageUrl}
+                                alt={slide.title || "LED Display"}
+                                interval={5000}
+                                autoPlay={true}
+                              />
+                            );
+                          } else if (isVideo) {
+                            return (
+                              <video
+                                src={mediaUrl}
+                                className="w-full h-full object-contain"
+                                controls
+                                playsInline
+                                loop
+                                muted
+                              />
+                            );
+                          } else {
+                            return (
+                              <ZoomableImage
+                                src={mediaUrl}
+                                alt={slide.title || "LED Display"}
+                                fill
+                                className="object-contain sm:object-cover"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
+                                quality={85}
+                              />
+                            );
+                          }
+                        })()}
                       </motion.div>
                       {slide.title && (
                         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">{slide.title}</h3>
