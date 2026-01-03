@@ -258,7 +258,7 @@ export default function PresentationView({
                         {slide.ledType.imageUrl && (
                           <div className="relative h-48 sm:h-64 md:h-96 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 mb-4 sm:mb-6">
                             <Image
-                              src={slide.ledType.imageUrl}
+                              src={Array.isArray(slide.ledType.imageUrl) ? slide.ledType.imageUrl[0] : slide.ledType.imageUrl}
                               alt={slide.ledType.name}
                               fill
                               className="object-contain p-4 sm:p-6"
