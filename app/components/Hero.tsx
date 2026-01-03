@@ -18,20 +18,28 @@ export default function Hero() {
             </div>
           </div>
           <div className="relative inline-block">
-            {/* Logo behind text */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-15 sm:opacity-20 md:opacity-25">
-              <div className="relative w-64 sm:w-80 md:w-96 lg:w-[500px] h-32 sm:h-40 md:h-48 lg:h-56">
-                {/* Try to load as image - if EPS, use img tag instead */}
-                <img
-                  src="/logo wejha 2 .eps"
-                  alt=""
-                  className="w-full h-full object-contain"
-                  style={{ filter: 'grayscale(100%) opacity(0.3)' }}
-                  onError={(e) => {
-                    // Hide if image doesn't load
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                  }}
+            {/* Company logos behind text */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-10 sm:opacity-15 md:opacity-20 gap-4 sm:gap-6 md:gap-8">
+              {/* SBC Logo - First */}
+              <div className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-16 sm:h-20 md:h-24 lg:h-28">
+                <Image
+                  src="/SBC.png"
+                  alt="SBC Logo"
+                  fill
+                  className="object-contain"
+                  style={{ filter: 'grayscale(100%) opacity(0.4)' }}
+                  priority
+                />
+              </div>
+              {/* WEJHA Logo - Second */}
+              <div className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-16 sm:h-20 md:h-24 lg:h-28">
+                <Image
+                  src="/Wejha_Logo_-_CMs_3-.png"
+                  alt="WEJHA Logo"
+                  fill
+                  className="object-contain"
+                  style={{ filter: 'grayscale(100%) opacity(0.4)' }}
+                  priority
                 />
               </div>
             </div>
