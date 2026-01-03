@@ -38,9 +38,12 @@ export default function About() {
     wechatId: "ullahmisbah15",
     employees: [
       {
-        name: "Sam Xie",
+        name: "Mohammed Misbah ullah",
         whatsapp: "https://wa.me/966550182835",
         wechatId: "ullahmisbah15",
+      },
+      {
+        name: "Sam Xie",
       },
     ],
   };
@@ -162,21 +165,23 @@ export default function About() {
                           <h5 className="font-semibold text-gray-900 mb-3 text-base sm:text-lg">
                             {employee.name}
                           </h5>
-                          <div className="space-y-2">
-                            <a
-                              href={employee.whatsapp}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
-                            >
-                              <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-                              <span className="text-sm sm:text-base">WhatsApp: {employee.whatsapp.replace("https://wa.me/", "")}</span>
-                            </a>
-                            <div className="flex items-center space-x-2 text-gray-700">
-                              <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                              <span className="text-sm sm:text-base">WeChat ID: {employee.wechatId}</span>
+                          {employee.whatsapp && employee.wechatId && (
+                            <div className="space-y-2">
+                              <a
+                                href={employee.whatsapp}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
+                              >
+                                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                                <span className="text-sm sm:text-base">WhatsApp: {employee.whatsapp.replace("https://wa.me/", "")}</span>
+                              </a>
+                              <div className="flex items-center space-x-2 text-gray-700">
+                                <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
+                                <span className="text-sm sm:text-base">WeChat ID: {employee.wechatId}</span>
+                              </div>
                             </div>
-                          </div>
+                          )}
                         </div>
                       ))}
                     </div>
