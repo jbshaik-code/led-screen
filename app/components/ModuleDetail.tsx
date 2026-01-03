@@ -6,6 +6,7 @@ import { X, ArrowRight, CheckCircle, ImageIcon, Presentation } from "lucide-reac
 import Image from "next/image";
 import PresentationView from "./PresentationView";
 import ImageSlider from "./ImageSlider";
+import ZoomableImage from "./ZoomableImage";
 
 interface ModuleDetailProps {
   module: {
@@ -624,15 +625,18 @@ export default function ModuleDetail({
               {/* Content */}
               <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 overflow-y-auto flex-1">
                 {/* Image Section */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="relative h-48 sm:h-64 md:h-96 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100"
-                >
-                  {'visualOverviewImage' in content && content.visualOverviewImage ? (
-                    <>
-                      <Image
+                {'visualOverviewImage' in content && content.visualOverviewImage ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="space-y-3"
+                  >
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                      {module.title} - Visual Overview
+                    </h3>
+                    <div className="relative h-64 sm:h-80 md:h-96 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100">
+                      <ZoomableImage
                         src={content.visualOverviewImage}
                         alt={`${module.title} - Visual Overview`}
                         fill
@@ -640,27 +644,20 @@ export default function ModuleDetail({
                         sizes="(max-width: 768px) 100vw, 80vw"
                         quality={90}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-white text-xl font-semibold drop-shadow-lg">
-                          {module.title} - Visual Overview
-                        </h3>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <IconComponent className="h-32 w-32 text-blue-600 opacity-20" />
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-white text-xl font-semibold">
-                          {module.title} - Visual Overview
-                        </h3>
-                      </div>
-                    </>
-                  )}
-                </motion.div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="relative h-48 sm:h-64 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100"
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <IconComponent className="h-32 w-32 text-blue-600 opacity-20" />
+                    </div>
+                  </motion.div>
+                )}
 
                 {/* Overview */}
                 <motion.div
