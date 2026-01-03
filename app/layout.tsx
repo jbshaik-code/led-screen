@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ErrorHandler from "./components/ErrorHandler";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0066cc" />
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <ErrorHandler />
         {children}
       </body>
     </html>
