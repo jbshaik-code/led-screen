@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, Monitor, Zap, BookOpen } from "lucide-react";
+import { ArrowDown, Zap, BookOpen } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -12,11 +12,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
         <div className="text-center">
-          <div className="flex justify-center mb-4 sm:mb-6 relative">
-            {/* Company logos behind icon */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-20 sm:opacity-30 md:opacity-40 gap-3 sm:gap-4 md:gap-6">
+          <div className="flex justify-center mb-4 sm:mb-6">
+            {/* Company logos */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8">
               {/* SBC Logo - First */}
-              <div className="relative w-20 sm:w-24 md:w-32 lg:w-40 h-10 sm:h-12 md:h-16 lg:h-20">
+              <div className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-16 sm:h-20 md:h-24 lg:h-28">
                 <Image
                   src="/SBC.png"
                   alt="SBC Logo"
@@ -26,7 +26,7 @@ export default function Hero() {
                 />
               </div>
               {/* WEJHA Logo - Second */}
-              <div className="relative w-20 sm:w-24 md:w-32 lg:w-40 h-10 sm:h-12 md:h-16 lg:h-20">
+              <div className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-16 sm:h-20 md:h-24 lg:h-28">
                 <Image
                   src="/Wejha_Logo_-_CMs_3-.png"
                   alt="WEJHA Logo"
@@ -35,9 +35,6 @@ export default function Hero() {
                   priority
                 />
               </div>
-            </div>
-            <div className="p-3 sm:p-4 bg-blue-100 rounded-full relative z-10">
-              <Monitor className="h-8 w-8 sm:h-12 sm:w-12 text-blue-600" />
             </div>
           </div>
           <div className="relative inline-block">
