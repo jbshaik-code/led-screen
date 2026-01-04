@@ -92,6 +92,11 @@ export default function ModuleDetail({
       "/Outdoor screen-2.jpeg",
       "/Outdoor screen-3.jpeg",
       "/Outdoor screen-4.jpeg",
+      "/Transparent screen.mp4",
+      "/Transparent screen-1.mp4",
+      "/Transparent screen-2.mp4",
+      "/Transparent screen-3.mp4",
+      "/Transparent screen-4.mp4",
     ];
 
     // Find all media files that match the base name pattern
@@ -500,6 +505,11 @@ export default function ModuleDetail({
               },
             ],
           },
+        },
+        {
+          title: "Transparent screen",
+          imageUrl: "/Transparent screen.mp4",
+          description: "Innovative transparent LED display screens that allow light to pass through while displaying vibrant content. Perfect for retail windows, building facades, and architectural installations where visibility and aesthetics are important.",
         },
       ],
     },
