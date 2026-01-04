@@ -145,7 +145,7 @@ export default function ModuleDetail({
         },
         {
           title: "Broadcast and control room displays",
-          imageUrl: "/countrol room.jpeg",
+          imageUrl: "/Broadcast and control room displays.jpeg",
           description: "High-resolution LED displays for broadcast studios, control rooms, and monitoring applications requiring precise image quality.",
         },
         {
