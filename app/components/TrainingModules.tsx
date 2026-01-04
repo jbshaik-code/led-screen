@@ -34,9 +34,10 @@ const modules = [
     description:
       "Exploring various applications of LED display screens across different industries and use cases",
     topics: [
-      "Indoor Video Walls",
-      "Outdoor Digital Billboards",
-      "Retail & Commercial Displays",
+      "Nova star application and controller",
+      "colour light application and controller",
+      "Cloud based controller is different",
+      "Live screening controller is different",
       "Broadcast & Control Rooms",
     ],
   },
