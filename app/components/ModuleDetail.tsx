@@ -958,8 +958,18 @@ export default function ModuleDetail({
                     transition={{ delay: 0.1 }}
                     className="relative h-48 sm:h-64 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100"
                   >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <IconComponent className="h-32 w-32 text-blue-600 opacity-20" />
+                    <div className="absolute inset-0 flex items-center justify-center p-8">
+                      {module.title === "What WEJHA is providing and can be provide in LED" ? (
+                        <Image
+                          src="/Wejha_Logo_-_CMs_3-.png"
+                          alt="WEJHA Logo"
+                          width={400}
+                          height={200}
+                          className="object-contain"
+                        />
+                      ) : (
+                        <IconComponent className="h-32 w-32 text-blue-600 opacity-20" />
+                      )}
                     </div>
                   </motion.div>
                 )}
