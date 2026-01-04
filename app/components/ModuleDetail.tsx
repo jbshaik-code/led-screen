@@ -119,10 +119,20 @@ export default function ModuleDetail({
       return mediaBaseName === baseName || mediaBaseName.startsWith(baseName + '-');
     });
 
-    // Sort to ensure order: base, -1, -2, etc.
+    // Sort to ensure order: for Decorative screen, images first, then videos; otherwise numeric order
+    const isDecorativeScreen = baseName === 'Decorative screen';
     return matchingMedia.sort((a, b) => {
       const aNum = a.match(/-(\d+)/)?.[1] || '0';
       const bNum = b.match(/-(\d+)/)?.[1] || '0';
+      const aIsImage = /\.(jpeg|jpg|png|gif|webp)$/i.test(a);
+      const bIsImage = /\.(jpeg|jpg|png|gif|webp)$/i.test(b);
+      
+      if (isDecorativeScreen) {
+        // For Decorative screen: images first, then videos, both in numerical order
+        if (aIsImage && !bIsImage) return -1;
+        if (!aIsImage && bIsImage) return 1;
+      }
+      
       if (aNum === '0' && bNum !== '0') return -1;
       if (aNum !== '0' && bNum === '0') return 1;
       return parseInt(aNum) - parseInt(bNum);
