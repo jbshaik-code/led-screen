@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <ErrorHandler />
         <LanguageProvider>
-          {children}
+        {children}
         </LanguageProvider>
       </body>
     </html>

@@ -42,6 +42,7 @@ export default function About() {
       },
       {
         name: "Sam Xie",
+        whatsapp: "https://wa.me/16267408299",
       },
     ],
   };
@@ -155,7 +156,7 @@ export default function About() {
                           <h5 className="font-semibold text-gray-900 mb-3 text-base sm:text-lg">
                             {employee.name}
                           </h5>
-                          {employee.whatsapp && employee.wechatId && (
+                          {employee.whatsapp && (
                             <div className="space-y-2">
                               <a
                                 href={employee.whatsapp}
@@ -166,10 +167,12 @@ export default function About() {
                                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                                 <span className="text-sm sm:text-base">WhatsApp: {employee.whatsapp.replace("https://wa.me/", "")}</span>
                               </a>
-                              <div className="flex items-center space-x-2 text-gray-700">
-                                <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                                <span className="text-sm sm:text-base">WeChat ID: {employee.wechatId}</span>
-                              </div>
+                              {employee.wechatId && (
+                                <div className="flex items-center space-x-2 text-gray-700">
+                                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
+                                  <span className="text-sm sm:text-base">WeChat ID: {employee.wechatId}</span>
+                                </div>
+                              )}
                             </div>
                           )}
                         </div>
