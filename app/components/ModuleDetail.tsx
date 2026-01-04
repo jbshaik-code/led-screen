@@ -546,7 +546,7 @@ export default function ModuleDetail({
         {
           title: "Floor screen",
           imageUrl: "/Floor screen-1.mp4",
-          description: "Floor-mounted LED display screens designed for ground-level installations and interactive floor displays. Perfect for retail spaces, exhibitions, museums, and interactive experiences where viewers look down at the display.\n\n🔹 Key Technical Features (Important for Projects):\n• Tempered anti-slip glass panel\n• High load-bearing structure\n• IP65 top / IP54 bottom protection\n• SMD LEDs with protective mask\n• Supports interactive sensors (touch, motion, game effects)\n• Compatible with Novastar / Colorlight controllers",
+          description: "Floor-mounted LED display screens designed for ground-level installations and interactive floor displays. Perfect for retail spaces, exhibitions, museums, and interactive experiences where viewers look down at the display.\n\n<strong>🔹 Key Technical Features (Important for Projects):\n• Tempered anti-slip glass panel\n• High load-bearing structure\n• IP65 top / IP54 bottom protection\n• SMD LEDs with protective mask\n• Supports interactive sensors (touch, motion, game effects)\n• Compatible with Novastar / Colorlight controllers</strong>",
           details: {
             type: "pixel-pitch",
             sections: [
@@ -1078,9 +1078,10 @@ export default function ModuleDetail({
                                 <h4 className="text-base sm:text-lg font-semibold text-gray-900">{title}</h4>
                               </div>
                               {description && (
-                                <p className="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
-                                  {description}
-                                </p>
+                                <p 
+                                  className="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed whitespace-pre-line"
+                                  dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br />') }}
+                                />
                               )}
                               
                               {/* Pixel Pitch Details */}
