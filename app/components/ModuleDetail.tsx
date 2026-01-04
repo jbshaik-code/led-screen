@@ -69,6 +69,7 @@ export default function ModuleDetail({
       "/custamize led-4.jpeg",
       "/custamize led-5.jpeg",
       "/custamize led-6.jpeg",
+      "/custamize led-7.mp4",
       "/Broadcast and control room displays.jpeg",
       "/Broadcast and control room displays-1.jpeg",
       "/Broadcast and control room displays-2.jpeg",
