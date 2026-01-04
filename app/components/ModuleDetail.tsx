@@ -119,7 +119,7 @@ export default function ModuleDetail({
       "/Interactive screen-3.mp4",
       "/Interactive screen-4.mp4",
       "/Interactive screen-5.mp4",
-      "/Kinetic screen-1.mp4",
+      "/Kinetic screen.mp4",
     ];
 
     // Find all media files that match the base name pattern
