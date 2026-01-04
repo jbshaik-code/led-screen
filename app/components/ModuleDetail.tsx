@@ -666,7 +666,36 @@ export default function ModuleDetail({
         {
           title: "Flexible & customize screen",
           imageUrl: "/Flexible & customize screen-1.mp4",
-          description: "Flexible and customizable LED display screens that can be shaped, curved, and configured to fit unique architectural requirements. Perfect for creative installations, curved surfaces, and custom designs that require adaptable LED display solutions.",
+          description: "Flexible LED screens are engineered to bend and curve, making pixel pitch selection critical for smooth curvature, image continuity, and viewing distance. Perfect for creative installations, curved surfaces, and custom designs that require adaptable LED display solutions.",
+          details: {
+            type: "pixel-pitch",
+            sections: [
+              {
+                pitch: "P1.2–P1.5 mm",
+                applications: "High-end indoor applications, control rooms, museums, premium brand displays",
+                viewingDistance: "Short viewing distance",
+                description: "Ultra-fine pixel pitch used for high-end indoor applications, offering short viewing distance and high resolution, ideal for control rooms, museums, and premium brand displays where exceptional image quality is essential.",
+              },
+              {
+                pitch: "P1.8 mm",
+                applications: "Curved indoor walls and columns",
+                viewingDistance: "1.8 m minimum",
+                description: "A popular choice for curved indoor walls and columns, providing excellent image quality with a minimum viewing distance of around 1.8 meters, perfect for architectural features and creative installations.",
+              },
+              {
+                pitch: "P2.0–P2.5 mm",
+                applications: "Creative indoor installations, cylindrical screens, wave designs, concave/convex surfaces",
+                viewingDistance: "2–2.5 m minimum",
+                description: "Widely used for creative indoor installations, such as cylindrical screens, wave designs, and concave/convex surfaces, balancing resolution and cost efficiency for versatile applications.",
+              },
+              {
+                pitch: "P3.0–P4.0 mm",
+                applications: "Larger flexible structures, shopping malls, exhibitions, stage backdrops",
+                viewingDistance: "3–4 m minimum",
+                description: "Suitable for larger flexible structures with a minimum viewing distance of 3–4 meters, commonly applied in shopping malls, exhibitions, and stage backdrops where flexibility and visual impact are important.",
+              },
+            ],
+          },
         },
       ],
     },
