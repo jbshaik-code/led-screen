@@ -889,12 +889,12 @@ export default function ModuleDetail({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed inset-0 sm:inset-4 md:inset-8 lg:inset-16 z-50 overflow-y-auto"
+            className="fixed inset-0 sm:inset-2 md:inset-4 lg:inset-6 z-50 overflow-y-auto"
             onClick={(e) => {
               if (e.target === e.currentTarget) onClose();
             }}
           >
-            <div className="bg-white rounded-none sm:rounded-2xl shadow-2xl max-w-6xl mx-auto min-h-full sm:min-h-[80vh] max-h-screen sm:max-h-[90vh] flex flex-col">
+            <div className="bg-white rounded-none sm:rounded-2xl shadow-2xl max-w-7xl mx-auto min-h-full sm:min-h-[85vh] max-h-screen sm:max-h-[95vh] flex flex-col">
               {/* Header */}
               <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 sm:p-6 rounded-t-none sm:rounded-t-2xl z-10 flex-shrink-0">
                 <div className="flex items-start justify-between gap-3">
