@@ -45,6 +45,11 @@ export default function About() {
         whatsapp: "https://wa.me/16267408299",
         wechatId: "q718739872",
       },
+      {
+        name: "Waddah Mansour",
+        whatsapp: "https://wa.me/966596640390",
+        wechatId: "wxid_o0j1axixsz7e22",
+      },
     ],
   };
 
