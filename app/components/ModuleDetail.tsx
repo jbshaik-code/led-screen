@@ -97,6 +97,9 @@ export default function ModuleDetail({
       "/Transparent screen-2.mp4",
       "/Transparent screen-3.mp4",
       "/Transparent screen-4.mp4",
+      "/Floor screen-1.mp4",
+      "/Floor screen-2.mp4",
+      "/Floor screen-3.mp4",
     ];
 
     // Find all media files that match the base name pattern
@@ -539,6 +542,11 @@ export default function ModuleDetail({
               },
             ],
           },
+        },
+        {
+          title: "Floor screen",
+          imageUrl: "/Floor screen-1.mp4",
+          description: "Floor-mounted LED display screens designed for ground-level installations and interactive floor displays. Perfect for retail spaces, exhibitions, museums, and interactive experiences where viewers look down at the display.",
         },
       ],
     },
