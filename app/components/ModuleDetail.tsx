@@ -120,6 +120,12 @@ export default function ModuleDetail({
       "/Interactive screen-4.mp4",
       "/Interactive screen-5.mp4",
       "/Kinetic screen.mp4",
+      "/Flexible & customize screen-1.mp4",
+      "/Flexible & customize screen-2.mp4",
+      "/Flexible & customize screen-3.mp4",
+      "/Flexible & customize screen-4.mp4",
+      "/Flexible & customize screen-5.mp4",
+      "/Flexible & customize screen-6.mp4",
     ];
 
     // Find all media files that match the base name pattern
@@ -655,6 +661,11 @@ export default function ModuleDetail({
               },
             ],
           },
+        },
+        {
+          title: "Flexible & customize screen",
+          imageUrl: "/Flexible & customize screen-1.mp4",
+          description: "Flexible and customizable LED display screens that can be shaped, curved, and configured to fit unique architectural requirements. Perfect for creative installations, curved surfaces, and custom designs that require adaptable LED display solutions.",
         },
       ],
     },
