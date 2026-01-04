@@ -438,6 +438,35 @@ export default function ModuleDetail({
           title: "Indoor screen",
           imageUrl: "/Indoor screen.mp4",
           description: "High-quality indoor LED display screens designed for retail stores, corporate lobbies, conference rooms, and indoor environments requiring superior image quality and close viewing distances.",
+          details: {
+            type: "pixel-pitch",
+            sections: [
+              {
+                pitch: "P1.5 mm",
+                applications: "Premium retail stores, luxury showrooms, corporate boardrooms",
+                viewingDistance: "1.5–3 m",
+                description: "Ultra-fine pixel pitch providing exceptional image clarity and detail. Perfect for close viewing applications where image quality is paramount. Ideal for high-end retail environments and executive meeting rooms.",
+              },
+              {
+                pitch: "P1.9 mm",
+                applications: "Corporate lobbies, conference rooms, retail displays, museums",
+                viewingDistance: "2–4 m",
+                description: "Fine pixel pitch delivering excellent image quality with sharp detail. Suitable for medium-close viewing distances in professional environments. Offers perfect balance between image quality and viewing flexibility.",
+              },
+              {
+                pitch: "P2.0 mm",
+                applications: "Corporate lobbies, meeting rooms, retail stores, entertainment venues",
+                viewingDistance: "2.5–5 m",
+                description: "Fine pixel pitch offering great image quality and versatility. Ideal for various indoor applications where viewers are at medium distances. Provides excellent color reproduction and brightness uniformity.",
+              },
+              {
+                pitch: "P2.5 mm",
+                applications: "Conference halls, auditoriums, shopping malls, exhibition centers",
+                viewingDistance: "3–6 m",
+                description: "Standard fine pixel pitch providing good image quality for medium-distance viewing. Cost-effective solution for larger indoor spaces. Excellent for presentations, exhibitions, and commercial displays.",
+              },
+            ],
+          },
         },
       ],
     },
@@ -526,7 +555,6 @@ export default function ModuleDetail({
                 title: app.title,
                 imageUrl: mediaToUse.length > 1 ? mediaToUse : mediaToUse[0],
                 imageCaption: app.description || app.title,
-                content: app.description,
               });
             }
             
