@@ -109,7 +109,7 @@ export default function MediaSlider({
           />
         </div>
       );
-    } else {
+    } else if (singleMedia) {
       return (
         <div className="relative w-full h-full">
           <ZoomableImage
@@ -123,6 +123,7 @@ export default function MediaSlider({
         </div>
       );
     }
+    return null;
   }
 
   return (
