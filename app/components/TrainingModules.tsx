@@ -56,7 +56,7 @@ const modules = [
         "Floor screen",
         "Interactive screen",
         "Kinetic screen",
-        "Rental screen",
+        "Flexible & customize screen",
       ],
   },
   {

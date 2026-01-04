@@ -473,7 +473,7 @@ export default function ModuleDetail({
         "Floor screen",
         "Interactive screen",
         "Kinetic screen",
-        "Rental screen",
+        "Flexible & customize screen",
       ],
       applications: [
         {
