@@ -103,6 +103,11 @@ export default function ModuleDetail({
       "/Decorative screen-1.mp4",
       "/Decorative screen-2.mp4",
       "/Decorative screen-3.mp4",
+      "/Decorative screen-4.jpeg",
+      "/Decorative screen-5.jpeg",
+      "/Decorative screen-6.jpeg",
+      "/Decorative screen-7.jpeg",
+      "/Decorative screen-8.jpeg",
     ];
 
     // Find all media files that match the base name pattern
