@@ -547,6 +547,41 @@ export default function ModuleDetail({
           title: "Floor screen",
           imageUrl: "/Floor screen-1.mp4",
           description: "Floor-mounted LED display screens designed for ground-level installations and interactive floor displays. Perfect for retail spaces, exhibitions, museums, and interactive experiences where viewers look down at the display.",
+          details: {
+            type: "pixel-pitch",
+            sections: [
+              {
+                pitch: "P2.6 mm",
+                applications: "Indoor stages, exhibitions",
+                viewingDistance: "≥2.5 m",
+                description: "Load capacity: ≥1.5–2 tons/m² | Brightness: 1000–1500 nits. Ideal for indoor stages and exhibition floors where high image quality and moderate load capacity are required.",
+              },
+              {
+                pitch: "P2.9 mm",
+                applications: "Event stages, retail",
+                viewingDistance: "≥3 m",
+                description: "Load capacity: ≥2 tons/m² | Brightness: 1200–1800 nits. Perfect for event stages and retail environments where durability and image clarity are essential.",
+              },
+              {
+                pitch: "P3.9 mm",
+                applications: "Malls, wedding stages",
+                viewingDistance: "≥4 m",
+                description: "Load capacity: ≥2–2.5 tons/m² | Brightness: 1500–2000 nits. Suitable for shopping malls and wedding stages where higher load capacity and excellent visibility are needed.",
+              },
+              {
+                pitch: "P4.8 mm",
+                applications: "High-traffic areas",
+                viewingDistance: "≥5 m",
+                description: "Load capacity: ≥2.5–3 tons/m² | Brightness: 1800–2500 nits. Designed for high-traffic areas where maximum durability and brightness are required for continuous use.",
+              },
+              {
+                pitch: "P6.25 mm",
+                applications: "Large-scale floor displays",
+                viewingDistance: "≥6 m",
+                description: "Load capacity: ≥3 tons/m². Perfect for large-scale floor displays where maximum load capacity and long viewing distances are needed.",
+              },
+            ],
+          },
         },
       ],
     },
