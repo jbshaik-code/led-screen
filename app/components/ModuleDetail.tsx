@@ -49,7 +49,9 @@ export default function ModuleDetail({
     if (!baseImageUrl) return [];
     
     // Extract base name without extension
-    const baseName = baseImageUrl.replace(/\.(jpeg|jpg|png|gif|webp|mp4)$/i, '');
+    let baseName = baseImageUrl.replace(/\.(jpeg|jpg|png|gif|webp|mp4)$/i, '');
+    // Remove trailing -1, -2, etc. to get the true base name
+    baseName = baseName.replace(/-\d+$/, '');
     
     // Known media files in public folder - in a real app, this would be dynamic
     const allMedia = [
