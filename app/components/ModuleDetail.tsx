@@ -100,6 +100,9 @@ export default function ModuleDetail({
       "/Floor screen-1.mp4",
       "/Floor screen-2.mp4",
       "/Floor screen-3.mp4",
+      "/Decorative screen-1.mp4",
+      "/Decorative screen-2.mp4",
+      "/Decorative screen-3.mp4",
     ];
 
     // Find all media files that match the base name pattern
@@ -581,6 +584,11 @@ export default function ModuleDetail({
               },
             ],
           },
+        },
+        {
+          title: "Decorative screen",
+          imageUrl: "/Decorative screen-1.mp4",
+          description: "Custom-designed decorative LED display screens for artistic installations, architectural features, and creative visual displays. Perfect for enhancing interior and exterior spaces with unique shapes, patterns, and designs.",
         },
       ],
     },
