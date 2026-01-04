@@ -43,6 +43,7 @@ export default function About() {
       {
         name: "Sam Xie",
         whatsapp: "https://wa.me/16267408299",
+        wechatId: "q718739872",
       },
     ],
   };
