@@ -509,7 +509,36 @@ export default function ModuleDetail({
         {
           title: "Transparent screen",
           imageUrl: "/Transparent screen.mp4",
-          description: "Innovative transparent LED display screens that allow light to pass through while displaying vibrant content. Perfect for retail windows, building facades, and architectural installations where visibility and aesthetics are important.",
+          description: "Indoor transparent LED screens are available in multiple pixel pitches to suit different applications. Innovative transparent LED display screens that allow light to pass through while displaying vibrant content. Perfect for retail windows, building facades, and architectural installations where visibility and aesthetics are important.",
+          details: {
+            type: "pixel-pitch",
+            sections: [
+              {
+                pitch: "P2.6 mm",
+                applications: "Showrooms and retail glass",
+                viewingDistance: "2.5 m minimum",
+                description: "Offers around 60–65% transparency with 2500–3000 nits brightness, making it ideal for showrooms and retail glass applications where visibility and display quality are both important.",
+              },
+              {
+                pitch: "P2.9 mm",
+                applications: "Shopping malls",
+                viewingDistance: "3 m minimum",
+                description: "Provides 65–70% transparency with 3000 nits brightness, commonly used in shopping malls where high transparency and good image quality are needed for engaging customer displays.",
+              },
+              {
+                pitch: "P3.9 mm",
+                applications: "Corporate lobbies",
+                viewingDistance: "4 m minimum",
+                description: "Delivers 70–75% transparency with about 3500 nits brightness, suitable for corporate lobbies where professional presentation and natural light are both priorities.",
+              },
+              {
+                pitch: "P4.8 mm",
+                applications: "Large indoor glass walls",
+                viewingDistance: "5 m minimum",
+                description: "Features higher transparency of 75–80% with 3500–4000 nits brightness, making it a good choice for large indoor glass walls where maximum transparency and visibility are desired.",
+              },
+            ],
+          },
         },
       ],
     },
