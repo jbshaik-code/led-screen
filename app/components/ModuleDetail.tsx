@@ -463,7 +463,7 @@ export default function ModuleDetail({
     },
     "What WEJHA is providing and can be provide in LED": {
       overview:
-        "WEJHA offers comprehensive LED display solutions including indoor screens, outdoor screens, transparent screens, smart film, decorative screens, floor screens, interactive screens, kinetic screens, and rental screens. Our products and services are designed to meet diverse architectural and design requirements.",
+        "WEJHA offers comprehensive LED display solutions including indoor screens, outdoor screens, transparent screens, smart film, decorative screens, floor screens, interactive screens, kinetic screens, and flexible & customize screens. Our products and services are designed to meet diverse architectural and design requirements.",
       keyPoints: [
         "Indoor screen",
         "Outdoor screen",
