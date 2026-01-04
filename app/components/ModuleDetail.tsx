@@ -866,31 +866,6 @@ export default function ModuleDetail({
                   </motion.div>
                 )}
 
-                {/* Topics Covered */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: ('ledTypes' in content && content.ledTypes) ? 0.8 : 0.5 }}
-                >
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                    Topics Covered
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
-                    {module.topics.map((topic, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: (('ledTypes' in content && content.ledTypes) ? 0.9 : 0.6) + index * 0.05 }}
-                        className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-gray-50 to-blue-50 p-3 sm:p-4 rounded-lg"
-                      >
-                        <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600 flex-shrink-0" />
-                        <span className="text-sm sm:text-base text-gray-700 font-medium">{topic}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-
                 {/* Applications */}
                 {content.applications && content.applications.length > 0 && (
                   <motion.div
@@ -1014,6 +989,31 @@ export default function ModuleDetail({
                     </div>
                   </motion.div>
                 )}
+
+                {/* Topics Covered */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: (content.applications && content.applications.length > 0) ? 1.0 : (('ledTypes' in content && content.ledTypes) ? 0.8 : 0.5) }}
+                >
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    Topics Covered
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                    {module.topics.map((topic, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: ((content.applications && content.applications.length > 0) ? 1.1 : (('ledTypes' in content && content.ledTypes) ? 0.9 : 0.6)) + index * 0.05 }}
+                        className="flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-gray-50 to-blue-50 p-3 sm:p-4 rounded-lg"
+                      >
+                        <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-sm sm:text-base text-gray-700 font-medium">{topic}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
               </div>
 
               {/* Footer */}
