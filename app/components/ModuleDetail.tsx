@@ -126,6 +126,7 @@ export default function ModuleDetail({
       "/Flexible & customize screen-4.mp4",
       "/Flexible & customize screen-5.mp4",
       "/Flexible & customize screen-6.mp4",
+      "/Flexible & customize screen-7.mp4",
     ];
 
     // Find all media files that match the base name pattern
