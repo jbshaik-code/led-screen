@@ -147,7 +147,7 @@ export default function PresentationView({
                           </h2>
                         )}
                         {slide.content && (
-                          <div className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6 whitespace-pre-line">
+                          <div className={`text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-6 whitespace-pre-line ${slide.title === "Overview" ? "font-semibold" : ""}`}>
                             {slide.content.split('\n\n').map((paragraph: string, pIndex: number) => (
                               <p key={pIndex} className={pIndex > 0 ? "mt-3 sm:mt-4" : ""}>
                                 {paragraph}
