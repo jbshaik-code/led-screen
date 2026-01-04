@@ -48,10 +48,12 @@ const modules = [
     description:
       "Overview of WEJHA's LED display products, services, and solutions currently available and potential offerings",
     topics: [
-      "Current LED Products & Services",
-      "Available Solutions & Configurations",
-      "Custom LED Display Solutions",
-      "Future Product Roadmap",
+      "Indoor screen",
+      "Outdoor screen",
+      "Transparent screen",
+      "Smart film",
+      "Decorative screen",
+      "Floor screen",
     ],
   },
   {
