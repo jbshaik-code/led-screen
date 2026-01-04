@@ -81,6 +81,12 @@ export default function ModuleDetail({
       "/LED Display Structure and Components-4.mp4",
       "/LED Display Structure and Components-5.jpeg",
       "/LED Display Structure and Components-6.jpeg",
+      "/Indoor screen.mp4",
+      "/Indoor screen-1.mp4",
+      "/Indoor screen-2.mp4",
+      "/Indoor screen-3.jpeg",
+      "/Indoor screen-4.jpeg",
+      "/Indoor screen-5.jpeg",
     ];
 
     // Find all media files that match the base name pattern
@@ -410,6 +416,29 @@ export default function ModuleDetail({
         "Product development strategy",
         "Investment and business planning",
         "Technology roadmap development",
+      ],
+    },
+    "What WEJHA is providing and can be provide in LED": {
+      overview:
+        "WEJHA offers comprehensive LED display solutions including indoor screens, outdoor screens, transparent screens, smart film, decorative screens, floor screens, holographic screens, interactive screens, kinetic screens, and rental screens. Our products and services are designed to meet diverse architectural and design requirements.",
+      keyPoints: [
+        "Indoor screen",
+        "Outdoor screen",
+        "Transparent screen",
+        "Smart film",
+        "Decorative screen",
+        "Floor screen",
+        "Holographic screen",
+        "Interactive screen",
+        "Kinetic screen",
+        "Rental screen",
+      ],
+      applications: [
+        {
+          title: "Indoor screen",
+          imageUrl: "/Indoor screen.mp4",
+          description: "High-quality indoor LED display screens designed for retail stores, corporate lobbies, conference rooms, and indoor environments requiring superior image quality and close viewing distances.",
+        },
       ],
     },
   };
