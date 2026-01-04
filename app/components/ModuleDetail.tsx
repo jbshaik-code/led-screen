@@ -624,7 +624,7 @@ export default function ModuleDetail({
         },
         {
           title: "Kinetic screen",
-          imageUrl: "/Kinetic screen-1.mp4",
+          imageUrl: "/Kinetic screen.mp4",
           description: "Kinetic LED screens use pixel pitches selected according to viewing distance, motion depth, and overall visual impact. Dynamic LED displays that create movement and depth effects for immersive visual experiences.",
           details: {
             type: "pixel-pitch",
