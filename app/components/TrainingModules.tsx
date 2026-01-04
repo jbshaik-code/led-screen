@@ -54,6 +54,10 @@ const modules = [
       "Smart film",
       "Decorative screen",
       "Floor screen",
+      "Holographic screen",
+      "Interactive screen",
+      "Kinetic screen",
+      "Rental screen",
     ],
   },
   {
