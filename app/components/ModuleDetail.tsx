@@ -1148,9 +1148,9 @@ export default function ModuleDetail({
                         const description = isObject ? app.description : null;
 
                         // Find all matching media (images and videos) for this application
-                        const matchingMedia = imageUrl ? findMatchingImages(imageUrl) : [];
+                        const matchingMedia = imageUrl ? findMatchingImages(imageUrl).filter(m => m) : [];
                         const hasMultipleMedia = matchingMedia.length > 1;
-                        const hasVideo = matchingMedia.some(m => m.toLowerCase().endsWith('.mp4'));
+                        const hasVideo = matchingMedia.some(m => m && typeof m === 'string' && m.toLowerCase().endsWith('.mp4'));
 
                         return (
                           <motion.div
