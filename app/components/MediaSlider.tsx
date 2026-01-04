@@ -57,7 +57,8 @@ export default function MediaSlider({
     });
   }, [currentIndex, media]);
 
-  const isVideo = (url: string) => {
+  const isVideo = (url: string | undefined) => {
+    if (!url || typeof url !== 'string') return false;
     return url.toLowerCase().endsWith('.mp4') || url.toLowerCase().endsWith('.webm');
   };
 
@@ -92,6 +93,7 @@ export default function MediaSlider({
 
   if (media.length === 1) {
     const singleMedia = media[0];
+    if (!singleMedia) return null;
     if (isVideo(singleMedia)) {
       return (
         <div className="relative w-full h-full flex items-center justify-center bg-black">
@@ -138,7 +140,7 @@ export default function MediaSlider({
           transition={{ duration: 0.5 }}
           className="relative w-full h-full"
         >
-          {isVideo(media[currentIndex]) ? (
+          {media[currentIndex] && isVideo(media[currentIndex]) ? (
             <div className="relative w-full h-full flex items-center justify-center bg-black">
               <video
                 ref={(el) => { videoRefs.current[currentIndex] = el; }}
@@ -153,7 +155,7 @@ export default function MediaSlider({
                 onPause={() => setIsPlaying(false)}
               />
             </div>
-          ) : (
+          ) : media[currentIndex] ? (
             <ZoomableImage
               src={media[currentIndex]}
               alt={`${alt} - ${currentIndex + 1}`}
@@ -162,7 +164,7 @@ export default function MediaSlider({
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={85}
             />
-          )}
+          ) : null}
         </motion.div>
       </AnimatePresence>
 
