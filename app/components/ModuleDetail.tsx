@@ -546,7 +546,7 @@ export default function ModuleDetail({
         {
           title: "Floor screen",
           imageUrl: "/Floor screen-1.mp4",
-          description: "Floor-mounted LED display screens designed for ground-level installations and interactive floor displays. Perfect for retail spaces, exhibitions, museums, and interactive experiences where viewers look down at the display.",
+          description: "Floor-mounted LED display screens designed for ground-level installations and interactive floor displays. Perfect for retail spaces, exhibitions, museums, and interactive experiences where viewers look down at the display.\n\n🔹 Key Technical Features (Important for Projects):\n• Tempered anti-slip glass panel\n• High load-bearing structure\n• IP65 top / IP54 bottom protection\n• SMD LEDs with protective mask\n• Supports interactive sensors (touch, motion, game effects)\n• Compatible with Novastar / Colorlight controllers",
           details: {
             type: "pixel-pitch",
             sections: [
