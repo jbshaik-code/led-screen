@@ -616,6 +616,11 @@ export default function ModuleDetail({
           imageUrl: "/Decorative screen-1.mp4",
           description: "Custom-designed decorative LED display screens for artistic installations, architectural features, and creative visual displays. Perfect for enhancing interior and exterior spaces with unique shapes, patterns, and designs.",
         },
+        {
+          title: "Interactive screen",
+          imageUrl: "/Interactive screen-1.mp4",
+          description: "Interactive LED display screens with touch, motion, and gesture recognition capabilities. Perfect for engaging user experiences, retail displays, exhibitions, and interactive installations where user interaction enhances the visual experience.",
+        },
       ],
     },
   };
