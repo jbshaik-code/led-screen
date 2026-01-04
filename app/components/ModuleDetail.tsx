@@ -441,7 +441,6 @@ export default function ModuleDetail({
         "Smart film",
         "Decorative screen",
         "Floor screen",
-        "Holographic screen",
         "Interactive screen",
         "Kinetic screen",
         "Rental screen",
