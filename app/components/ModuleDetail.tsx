@@ -127,6 +127,7 @@ export default function ModuleDetail({
       "/Flexible & customize screen-5.mp4",
       "/Flexible & customize screen-6.mp4",
       "/Flexible & customize screen-7.mp4",
+      "/Smart film.mp4",
     ];
 
     // Find all media files that match the base name pattern
@@ -578,6 +579,11 @@ export default function ModuleDetail({
               },
             ],
           },
+        },
+        {
+          title: "Smart film",
+          imageUrl: "/Smart film.mp4",
+          description: "Smart film LED display technology that provides transparent, switchable privacy and display capabilities. Perfect for windows, glass partitions, and architectural features where both transparency and visual content are required.",
         },
         {
           title: "Floor screen",
