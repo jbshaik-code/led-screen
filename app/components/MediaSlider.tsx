@@ -114,7 +114,7 @@ export default function MediaSlider({
             src={singleMedia}
             alt={alt}
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={85}
           />
@@ -158,7 +158,7 @@ export default function MediaSlider({
               src={media[currentIndex]}
               alt={`${alt} - ${currentIndex + 1}`}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={85}
             />
