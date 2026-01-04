@@ -114,6 +114,11 @@ export default function ModuleDetail({
       "/Decorative screen-10.jpeg",
       "/Decorative screen-11.jpeg",
       "/Decorative screen-12.jpeg",
+      "/Interactive screen-1.mp4",
+      "/Interactive screen-2.mp4",
+      "/Interactive screen-3.mp4",
+      "/Interactive screen-4.mp4",
+      "/Interactive screen-5.mp4",
     ];
 
     // Find all media files that match the base name pattern
