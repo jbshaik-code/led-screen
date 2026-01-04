@@ -73,7 +73,6 @@ export default function ModuleDetail({
       "/Broadcast and control room displays-1.jpeg",
       "/Broadcast and control room displays-2.jpeg",
       "/Broadcast and control room displays-3.jpeg",
-      "/Broadcast and control room displays.mp4",
       "/LED Display Structure and Components.mp4",
       "/LED Display Structure and Components-1.mp4",
       "/LED Display Structure and Components-2.mp4",
