@@ -87,6 +87,11 @@ export default function ModuleDetail({
       "/Indoor screen-3.jpeg",
       "/Indoor screen-4.jpeg",
       "/Indoor screen-5.jpeg",
+      "/Outdoor screen.jpeg",
+      "/Outdoor screen-1.jpeg",
+      "/Outdoor screen-2.jpeg",
+      "/Outdoor screen-3.jpeg",
+      "/Outdoor screen-4.jpeg",
     ];
 
     // Find all media files that match the base name pattern
@@ -464,6 +469,34 @@ export default function ModuleDetail({
                 applications: "Conference halls, auditoriums, shopping malls, exhibition centers",
                 viewingDistance: "3–6 m",
                 description: "Standard fine pixel pitch providing good image quality for medium-distance viewing. Cost-effective solution for larger indoor spaces. Excellent for presentations, exhibitions, and commercial displays.",
+              },
+            ],
+          },
+        },
+        {
+          title: "Outdoor screen",
+          imageUrl: "/Outdoor screen.jpeg",
+          description: "High-performance outdoor LED display screens designed for advertising, public information, and event displays. Built to withstand harsh weather conditions while delivering bright, clear images visible in direct sunlight.",
+          details: {
+            type: "pixel-pitch",
+            sections: [
+              {
+                pitch: "P5 mm",
+                applications: "Outdoor advertising, billboards, public squares, transportation hubs",
+                viewingDistance: "5–15 m",
+                description: "Medium pixel pitch ideal for outdoor advertising and public information displays. Provides excellent brightness and visibility in direct sunlight. Perfect for high-traffic areas and medium-distance viewing applications.",
+              },
+              {
+                pitch: "P6 mm",
+                applications: "Large billboards, stadium screens, outdoor events, highway advertising",
+                viewingDistance: "6–20 m",
+                description: "Standard outdoor pixel pitch offering great balance between image quality and viewing distance. Ideal for large-scale outdoor installations where viewers are at greater distances. Excellent for advertising and public displays.",
+              },
+              {
+                pitch: "P10 mm",
+                applications: "Large outdoor billboards, stadium scoreboards, highway signs, airport displays",
+                viewingDistance: "10–30 m",
+                description: "Coarse pixel pitch designed for very large outdoor displays and long viewing distances. Cost-effective solution for mega-sized installations. Perfect for stadiums, highways, and large-scale advertising applications.",
               },
             ],
           },
