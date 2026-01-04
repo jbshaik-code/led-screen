@@ -11,6 +11,7 @@ import {
   TrendingUp,
   Shield,
   BarChart,
+  Package,
   ChevronRight,
 } from "lucide-react";
 import ModuleDetail from "./ModuleDetail";
@@ -111,6 +112,18 @@ const modules = [
       "Emerging Display Technologies",
       "Future Applications & Innovations",
       "Industry Outlook & Predictions",
+    ],
+  },
+  {
+    icon: Package,
+    title: "What WEJHA is providing and can be provide in LED",
+    description:
+      "Overview of WEJHA's LED display products, services, and solutions currently available and potential offerings",
+    topics: [
+      "Current LED Products & Services",
+      "Available Solutions & Configurations",
+      "Custom LED Display Solutions",
+      "Future Product Roadmap",
     ],
   },
 ];
