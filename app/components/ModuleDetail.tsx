@@ -621,6 +621,40 @@ export default function ModuleDetail({
           imageUrl: "/Interactive screen-1.mp4",
           description: "Interactive LED display screens with touch, motion, and gesture recognition capabilities. Perfect for engaging user experiences, retail displays, exhibitions, and interactive installations where user interaction enhances the visual experience.",
         },
+        {
+          title: "Kinetic screen",
+          imageUrl: "/Kinetic screen-1.mp4",
+          description: "Kinetic LED screens use pixel pitches selected according to viewing distance, motion depth, and overall visual impact. Dynamic LED displays that create movement and depth effects for immersive visual experiences.",
+          details: {
+            type: "pixel-pitch",
+            sections: [
+              {
+                pitch: "P3.9 mm",
+                applications: "Premium indoor kinetic displays, luxury showrooms, hotel lobbies, brand installations",
+                viewingDistance: "4 m minimum",
+                description: "Used for premium indoor kinetic displays, delivering high visual clarity for luxury showrooms, hotel lobbies, and brand installations where exceptional image quality is essential.",
+              },
+              {
+                pitch: "P4.8 mm",
+                applications: "Corporate atriums and exhibition halls",
+                viewingDistance: "5 m minimum",
+                description: "A balanced solution ideal for corporate atriums and exhibition halls, where smooth motion and depth effects are important for creating engaging visual experiences.",
+              },
+              {
+                pitch: "P6.25 mm",
+                applications: "Large-scale kinetic ceilings and walls",
+                viewingDistance: "6 m minimum",
+                description: "Commonly used for large-scale kinetic ceilings and walls, offering strong visual impact while reducing system weight and overall cost for extensive installations.",
+              },
+              {
+                pitch: "P8–P10 mm",
+                applications: "Landmark and mega kinetic installations, airports, shopping malls, large public spaces",
+                viewingDistance: "8–10 m minimum",
+                description: "Selected for landmark and mega kinetic installations, suitable for airports, shopping malls, and large public spaces, where kinetic movement and 3D effects take priority over fine resolution.",
+              },
+            ],
+          },
+        },
       ],
     },
   };
