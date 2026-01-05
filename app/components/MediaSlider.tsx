@@ -96,7 +96,7 @@ export default function MediaSlider({
     if (!singleMedia) return null;
     if (isVideo(singleMedia)) {
       return (
-        <div className="relative w-full h-full flex items-center justify-center bg-black">
+        <div className="relative w-full h-full flex items-center justify-center bg-black min-h-[192px] sm:min-h-[224px]">
           <video
             ref={(el) => { videoRefs.current[0] = el; }}
             src={singleMedia}
@@ -105,19 +105,25 @@ export default function MediaSlider({
             playsInline
             loop
             muted
+            preload="metadata"
             controlsList="nodownload"
+            onError={(e) => {
+              console.error('Video load error:', singleMedia);
+              const target = e.target as HTMLVideoElement;
+              target.style.display = 'none';
+            }}
           />
         </div>
       );
     } else if (singleMedia) {
       return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full min-h-[192px] sm:min-h-[224px]">
           <ZoomableImage
             src={singleMedia}
             alt={alt}
             fill
             className="object-contain"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             quality={85}
           />
         </div>
@@ -142,7 +148,7 @@ export default function MediaSlider({
           className="relative w-full h-full"
         >
           {media[currentIndex] && isVideo(media[currentIndex]) ? (
-            <div className="relative w-full h-full flex items-center justify-center bg-black">
+            <div className="relative w-full h-full flex items-center justify-center bg-black min-h-[192px] sm:min-h-[224px]">
               <video
                 ref={(el) => { videoRefs.current[currentIndex] = el; }}
                 src={media[currentIndex]}
@@ -151,20 +157,28 @@ export default function MediaSlider({
                 playsInline
                 loop
                 muted
+                preload="metadata"
                 controlsList="nodownload"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
+                onError={(e) => {
+                  console.error('Video load error:', media[currentIndex]);
+                  const target = e.target as HTMLVideoElement;
+                  target.style.display = 'none';
+                }}
               />
             </div>
           ) : media[currentIndex] ? (
-            <ZoomableImage
-              src={media[currentIndex]}
-              alt={`${alt} - ${currentIndex + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={85}
-            />
+            <div className="relative w-full h-full min-h-[192px] sm:min-h-[224px]">
+              <ZoomableImage
+                src={media[currentIndex]}
+                alt={`${alt} - ${currentIndex + 1}`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={85}
+              />
+            </div>
           ) : null}
         </motion.div>
       </AnimatePresence>

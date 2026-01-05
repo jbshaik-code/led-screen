@@ -889,12 +889,12 @@ export default function ModuleDetail({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed inset-0 sm:inset-2 md:inset-4 lg:inset-6 z-50 overflow-y-auto"
+            className="fixed inset-0 sm:inset-2 md:inset-4 lg:inset-6 z-50 overflow-y-auto overscroll-contain"
             onClick={(e) => {
               if (e.target === e.currentTarget) onClose();
             }}
           >
-            <div className="bg-white rounded-none sm:rounded-2xl shadow-2xl max-w-7xl mx-auto min-h-full sm:min-h-[85vh] max-h-screen sm:max-h-[95vh] flex flex-col">
+            <div className="bg-white rounded-none sm:rounded-2xl shadow-2xl max-w-7xl mx-auto min-h-full sm:min-h-[85vh] max-h-screen sm:max-h-[95vh] flex flex-col overflow-hidden">
               {/* Header */}
               <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 sm:p-6 rounded-t-none sm:rounded-t-2xl z-10 flex-shrink-0">
                 <div className="flex items-start justify-between gap-3">
@@ -928,7 +928,7 @@ export default function ModuleDetail({
               </div>
 
               {/* Content */}
-              <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 overflow-y-auto flex-1">
+              <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 overflow-y-auto flex-1 overscroll-contain -webkit-overflow-scrolling-touch">
                 {/* Image Section */}
                 {'visualOverviewImage' in content && content.visualOverviewImage ? (
                   <motion.div
@@ -958,17 +958,20 @@ export default function ModuleDetail({
                     transition={{ delay: 0.1 }}
                     className="relative h-48 sm:h-64 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100"
                   >
-                    <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8">
                       {module.title === "What WEJHA is providing and can be provide in LED" ? (
-                        <Image
-                          src="/Wejha_Logo_-_CMs_3-.png"
-                          alt="WEJHA Logo"
-                          width={400}
-                          height={200}
-                          className="object-contain"
-                        />
+                        <div className="relative w-full max-w-[280px] sm:max-w-[400px] h-[140px] sm:h-[200px]">
+                          <Image
+                            src="/Wejha_Logo_-_CMs_3-.png"
+                            alt="WEJHA Logo"
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 640px) 280px, 400px"
+                            priority
+                          />
+                        </div>
                       ) : (
-                        <IconComponent className="h-32 w-32 text-blue-600 opacity-20" />
+                        <IconComponent className="h-24 w-24 sm:h-32 sm:w-32 text-blue-600 opacity-20" />
                       )}
                     </div>
                   </motion.div>
@@ -1171,7 +1174,7 @@ export default function ModuleDetail({
                             className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                           >
                             {imageUrl && (
-                              <div className="relative w-full h-40 sm:h-48">
+                              <div className="relative w-full h-48 sm:h-56 md:h-64 min-h-[192px] sm:min-h-[224px] md:min-h-[256px]">
                                 {hasMultipleMedia ? (
                                   <MediaSlider
                                     media={matchingMedia}
@@ -1180,14 +1183,20 @@ export default function ModuleDetail({
                                     autoPlay={true}
                                   />
                                 ) : hasVideo ? (
-                                  <div className="relative w-full h-full">
+                                  <div className="relative w-full h-full bg-black">
                                     <video
                                       src={imageUrl}
-                                      className="w-full h-full object-cover"
+                                      className="w-full h-full object-contain"
                                       controls
                                       playsInline
                                       loop
                                       muted
+                                      preload="metadata"
+                                      onError={(e) => {
+                                        console.error('Video load error:', imageUrl);
+                                        const target = e.target as HTMLVideoElement;
+                                        target.style.display = 'none';
+                                      }}
                                     />
                                   </div>
                                 ) : (
@@ -1195,8 +1204,8 @@ export default function ModuleDetail({
                                     src={imageUrl}
                                     alt={title}
                                     fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-contain sm:object-cover"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     quality={85}
                                   />
                                 )}
